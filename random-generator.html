@@ -41,7 +41,7 @@
             box-sizing: border-box;
         }
         button {
-            background-color: #4CAF50;
+            background-color: green;
             color: white;
             padding: 12px 24px;
             border: none;
@@ -88,7 +88,7 @@
             <div id="maxError" class="error">Enter a number from 0 to 100 000</div>
         </div>
         
-        <button onclick="generateRandomNumber()">Generate the number</button>
+        <button id="generate" onclick="generateRandomNumber()">Generate the number</button>
         
         <div id="result">There will be the random number</div>
     </div>
@@ -102,6 +102,20 @@
             
             const minError = document.getElementById('minError');
             const maxError = document.getElementById('maxError');
+			
+			button = document.getElementById('generate');
+			const randomNumberColor = Math.random();
+			if (randomNumberColor < 0.2) {
+				button.style.backgroundColor = 'blue';
+			} else if (randomNumberColor < 0.4) {
+				button.style.backgroundColor = 'green';
+			} else if (randomNumberColor < 0.6) {
+				button.style.backgroundColor = 'gray';
+			} else if (randomNumberColor < 0.8) {
+				button.style.backgroundColor = 'purple';
+			} else {
+				button.style.backgroundColor = 'yellow';
+			}
             
             // —брасываем сообщени€ об ошибках
             minError.style.display = 'none';
